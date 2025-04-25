@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Summary</title>
+  <script src="right_click.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .match-card, .box {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .booked {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+
+    .seat-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .seat {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    .seat.active {
+      border-color: #4285f4;
+      background-color: #e3f0ff;
+    }
+
+    .description {
+      margin: 10px 0;
+      padding: 10px;
+      background: #e3f0ff;
+      border: 1px solid #4285f4;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .price, .qty {
+      margin-top: 15px;
+    }
+
+    .qty input {
+      width: 40px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .qty button {
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .total span {
+      color: red;
+    }
+
+    .proceed-btn {
+      margin-top: 20px;
+      background: #d32f2f;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .proceed-btn:hover {
+      background: #b71c1c;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .match-card, .box {
+        max-width: 100%;
+      }
+    }
+
+    .section-header {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      color: #d32f2f;
+    }
+
+    .image-center img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Match Preview Image Section -->
+<div class="match-card" id="details"></div>
+
+<!-- Ground Map Header -->
+<div class="section-header">
+  <h2>Stadium Ground Map!</h2>
+</div>
+
+<!-- Ground Map Image -->
+<div class="image-center">
+  <img src="https://media-hosting.imagekit.io/a2c5b1a87a094ea6/m-chinnaswamy-stadium-bangalore-seating-plan.webp?Expires=1840107488&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=UelpeNG3nC1ZiX7UM3058l0ge3JyKzli9SXMlDzzPCwDnZGnCeqiBXwbst7nVL3u1u766hqOhJSezkHJwNtaqe5eX2I3DSPaLxTdI3zRapbS66NEEbcekV1Mv1~rUyuLkyNggcgtT3-TFqPeJGNj4rikbRgLzjsRxYwndoAxARPframHusTU-BNBSXbHXRsGe68HAeBlL2LFgFa437obpWGDutn4RJeZ0GdiEFMHhuq2WQb2F77p4Ac78HBhTC0vFMXIf660LdQfe4~lddwpZwYPxf4OH-Bi5EvoLaqYuSbQY9EcCfZVjgkl3ynPJD4iLDXP2-MrnxoAPvDlCeh-qg__" alt="IPL Stadium Ground" />
+</div>
+
+<!-- Booking Summary -->
+<div class="box">
+  <h2>Booking Summary</h2>
+
+  <div><strong>Ticket Type</strong></div> <br>
+  <div class="seat-options">
+    <div class="seat" data-price="1000" data-desc="Affordable seating, usually in the upper stands.">General Stand</div>
+    <div class="seat" data-price="1500" data-desc="Better view, closer to the field.">Premium Stand</div>
+    <div class="seat" data-price="3500" data-desc="Good view near pitch.">Pavilion Stand</div>
+    <div class="seat" data-price="6000" data-desc="Exclusive VIP access.">VIP Stand</div>
+    <div class="seat" data-price="8000" data-desc="Luxury private box.">Corporate Box</div>
+    <div class="seat" data-price="10000" data-desc="High-end hospitality and lounge.">Hospitality Box</div>
+    <div class="seat" data-price="16000" data-desc="Topmost premium view with food & drinks.">Skybox/Lounge</div>
+  </div>
+
+  <div class="description" id="descBox"></div>
+
+  <div class="price"><strong>Price per Ticket:</strong> ₹<span id="ticketPrice">0</span></div>
+
+  <div class="qty">
+    <strong>Quantity:</strong>
+    <button onclick="changeQty(-1)">-</button>
+    <input type="text" id="qty" value="1" readonly>
+    <button onclick="changeQty(1)">+</button>
+  </div>
+
+  <div class="total">Total: ₹ <span id="total">0</span></div>
+
+  <button class="proceed-btn" onclick="goToPayment()">Proceed to Booking</button>
+</div>
+
+<script>
+  let selectedSeat = null;
+  let price = 0;
+
+  // Load image from localStorage
+  const match = JSON.parse(localStorage.getItem("selectedMatch"));
+
+  if (match && match.image) {
+    document.getElementById("details").innerHTML = `
+      <h2 style="text-align: center;">Your Match Preview</h2>
+      <div style="display: flex; justify-content: center;">
+        <img src="${match.image}" alt="Match Preview" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
+      </div>
+    `;
+  } else {
+    document.getElementById("details").innerText = "No match preview found.";
+  }
+
+  // Seat selection logic
+  document.querySelectorAll('.seat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.seat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedSeat = btn.innerText;
+      price = parseInt(btn.dataset.price);
+      document.getElementById('ticketPrice').innerText = price;
+      document.getElementById('descBox').innerText = `${selectedSeat} – ${btn.dataset.desc}`;
+      document.getElementById('descBox').style.display = 'block';
+      updateTotal();
+    });
+  });
+
+  function changeQty(val) {
+    let qty = parseInt(document.getElementById('qty').value);
+    qty = Math.max(1, qty + val);
+    document.getElementById('qty').value = qty;
+    updateTotal();
+  }
+
+  function updateTotal() {
+    const qty = parseInt(document.getElementById('qty').value);
+    document.getElementById('total').innerText = price * qty;
+  }
+
+  function goToPayment() {
+    const qty = parseInt(document.getElementById('qty').value);
+    if (!selectedSeat || price === 0) {
+      alert("Please select a ticket type.");
+      return;
+    }
+
+    const paymentData = {
+      seatType: selectedSeat,
+      price,
+      qty,
+      total: price * qty
+    };
+
+    localStorage.setItem("paymentInfo", JSON.stringify(paymentData));
+    window.location.href = "3d.html"; // Your new page
+  }
+</script>
+
+</body>
+</html>

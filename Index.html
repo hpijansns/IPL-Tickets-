@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Image Landing & Match Booking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-item {
+        padding: 20px; /* Padding around each image item */
+        text-align: center; /* Center the link/image inside */
+    }
+
+    /* Style for the link wrapping the image */
+    .image-item a {
+        display: inline-block; /* Allows centering via text-align on parent */
+        text-decoration: none; /* Remove underline */
+        /* Add max-width if you want to constrain the clickable area size */
+        /* max-width: 600px; */
+    }
+
+    /* Style for the image inside the link */
+    .image-item img {
+        display: block; /* Ensure image takes block space within link */
+        max-width: 100%; /* Make image responsive within its container (the link) */
+        height: auto;   /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    }
+
+    /* Rest of your CSS */
+    /* Note: Removed duplicated CSS that was below */
+    .grid { display: flex; flex-direction: column; gap: 20px; padding: 20px; max-width: 100%; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .match-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 10px; flex-wrap: wrap; font-size: 14px; }
+    .teams { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 18px; margin-bottom: 10px; flex-wrap: wrap; text-align: center; }
+    .teams img { width: 40px; height: 40px; }
+    .location { text-align: center; margin-bottom: 15px; color: gray; font-size: 14px; }
+    .btn { display: block; width: 100%; background: red; color: white; padding: 10px; text-align: center; border: none; border-radius: 5px; font-size: 16px; text-decoration: none; }
+
+
+    @media screen and (max-width: 480px) {
+      .match-header { flex-direction: column; align-items: flex-start; gap: 5px; }
+      .teams { flex-direction: column; }
+      .image-item { padding: 10px; } /* Less padding on small screens */
+    }
+  </style>
+</head>
+<body>
+  <img
+    src="https://media-hosting.imagekit.io/c8b84c092fd84d90/Picsart_25-04-24_14-09-47-112.jpg?Expires=1840092024&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0W5GiYZFx65qWduFQZLnlhQAB2KXL~gG-pVG6IoZY7NwE6l3kYPiK2Ov8knRg4CDXdiUZPWX30kGvozIGi6Y0-OKtxYR-vWWGp6ciufK6wj-FnRf2NU3OYsP5o8YgOmlHJ52s40oQ-iu~KvRs6xXrIqW4uWxqfUshbw1we-niT0mG4z17SK6lvdBJz7S~LDm6Lpjt9O7u0KZwD-mlzlk5HFLbPJlBCud1EvhQgvn8qDQaS4zT94Dyp42y654~g-12h4JvSG5b2DHFah5vsLaJwMrtwa~vJfGVq~VXdAG5QbkcfEtjo3Lc40h3Rp6gj2xxJatxwWGo6WvuV3MucaWew__"
+    alt="Landing Hero Image"
+    class="hero-image"
+  />
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/a88e13efabab4621/Picsart_25-04-25_07-00-50-153.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=H9BdnrjI7hYWNoBJ46ys9lvdQ6I~g9gj6PRQnP-LQCfd9SjHEi6z70AM7RUWBEnzowEik7xVd51LtaegzsxCJZUaxnwzWKxFijhTBxZ9ON-VOrZVEA30-Desub0V97PF6rtQV6qlxm-6xUti10Bty4~1x~kIMn-BqKH7DlHvUFTcNMHZ4QNfJK0fVAnSpr9LLuyd3CsJLFhYONAtQWJs7Izkrmr8wZC4K7xUIeiUycUpQj7UiomQtNylyVog616D-l1p8eqJzH2mTCKgAQzc5Fjd8ICfCtKZt0euNpT0wlTTuNBC0LbygwFqKf~AaAJpXKqk4lhKnX7nVNy8yqEa9A__" alt="Clickable Image 1" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/353d3c09fbad4d91/Picsart_25-04-25_07-01-00-508.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=a3shLMqHdWQO8VP5azNHUi1hKCDu-Dnu~RJXH6LpgtbEqyaqFBr0y0XJ3kBVntAaqBt5fY7y5WyBEip7na07qx7PwTr7M0BF50mE43TNC1hHTsVecf8geMhXDygQPwUjLfTLPrtc2ET7f7csMEDYOstbP~Cy7r1TkYd5hX5lh24PDkNxDuhCuQT2wHtGgB4G~kiiUKPAoFR60RM9Xx1a7LBg~v~kDDjFxkmGH8JX3b7aS9zrpipniABpJj6CwBFxdKsVHPXXRz4VVhdvBu7hMoDVlCEq0p~Rjz6pZsxPz7EAwunNrwjuHwQ0FQhNhsULDxiuass-kld3AmPgTyMyCg__" alt="Clickable Image 2" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/7df0462a0300492b/Picsart_25-04-25_07-01-05-696.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=T~zn9R-cWzp93K6Dq46vEN8zVPjbMaWAL-PjvDLf32FqxFmF8O2Mdih2liJ7WvTC0~W~~eqt7AJPRqfze5JnpK86o1L-8teEFpfpSpOE2SoWon32ux4kEdJbAhfa3R4PRZaxKwAAUGZizn10Mn4SiDFEy6oW3CZhKcj2pRZ-HYyiVL2pTumoppPZ1K95j9TMm3JUdzJ2KcZdz~GZd4iHnsTfPs61f8OwIvlj-8p-ecfXOpSgI14eOoU6cCuKkZZ11JvBjXgrcL1D0LVCt3TcRJACtxTOdTmmRSqCIymfUtiMPjw4N8f3XdpMyM-KWSoofzVDxN4tHOv3Xjsplxkcbw__" alt="Clickable Image 3" />
+    </a>
+  </div>
+
+  </body>
+</html>

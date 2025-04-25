@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL 2025 - Payment Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      font-size: 16px;
+    }
+    html, body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #f5f5f5;
+      line-height: 1.5;
+    }
+
+    body {
+       padding-bottom: 30px;
+    }
+
+    .main-header {
+      background: linear-gradient(90deg, #003366, #004aad, #003366);
+      color: #FFD700;
+      padding: 18px 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: 3px solid #FFD700;
+    }
+
+    .main-header h1 {
+      margin: 0;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .payment-box {
+      background: white;
+      padding: 30px;
+      max-width: 600px;
+      margin: 40px auto 20px auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+
+    .payment-box h2 {
+      text-align: center;
+      color: #d32f2f;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .info {
+      margin: 1rem 0;
+      font-size: 1rem;
+      word-wrap: break-word;
+    }
+
+    .info span {
+      font-weight: bold;
+      word-break: break-word;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .info span:last-child {
+      font-weight: normal;
+    }
+
+    .payment-button {
+      display: block;
+      width: 100%;
+      padding: 12px 15px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      text-align: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .payment-button:hover,
+    .payment-button:focus {
+      background-color: #b71c1c;
+      outline: 2px solid #a01a1a;
+      outline-offset: 2px;
+    }
+
+    .input-box {
+      margin: 1.5rem 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .input-box label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 640px) {
+      html {
+        font-size: 15px;
+      }
+      .main-header h1 {
+        font-size: 1.8rem;
+      }
+      .payment-box {
+        padding: 20px 15px;
+        margin-top: 30px;
+        width: 95%;
+      }
+      .payment-box h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      html {
+        font-size: 14px;
+      }
+      .main-header h1 {
+        font-size: 1.5rem;
+      }
+      .payment-box {
+        padding: 15px 10px;
+      }
+      .payment-box h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <h1>IPL 2025</h1>
+</header>
+
+<div class="payment-box">
+  <h2>Payment Details</h2>
+  <div class="info"><span>Seat Type:</span><span id="seatType"></span></div>
+  <div class="info"><span>Price per Ticket:</span><span>₹<span id="price"></span></span></div>
+  <div class="info"><span>Quantity:</span><span id="qty"></span></div>
+  <div class="info"><span>Total Amount:</span><span>₹<span id="total"></span></span></div>
+  <div class="info"><span>GST (18%):</span><span>₹<span id="gst"></span></span></div>
+  <div class="info"><span>Grand Total:</span><span>₹<span id="grandTotal"></span></span></div>
+
+  <!-- Input fields for user details -->
+  <div class="input-box">
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+  </div>
+
+  <div class="input-box">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="Enter your email address">
+  </div>
+
+  <div class="input-box">
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" placeholder="Enter your full name">
+  </div>
+
+  <div class="input-box">
+    <label for="location">Location</label>
+    <input type="text" id="location" placeholder="Enter your location">
+  </div>
+
+  <button class="payment-button" onclick="goToPayment()">Payment Now</button>
+
+  <!-- Notes Section -->
+  <div class="note">
+    <ul>
+      <li>As soon as you click the 'Payment Now' button, your IPL ticket will be sent to your email once the payment is successful.</li>
+      <li>You can show the ticket on your mobile at the entry; there's no need to take a printout or photocopy.</li>
+      <li>For any issues or queries, please contact our support team.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const paymentDataString = localStorage.getItem("paymentInfo");
+  let paymentData = null;
+
+  try {
+    if (paymentDataString) {
+      paymentData = JSON.parse(paymentDataString);
+    }
+  } catch (e) {
+    console.error("Error parsing payment data from localStorage:", e);
+  }
+
+  const paymentBox = document.querySelector('.payment-box');
+
+  if (paymentData && typeof paymentData === 'object' && paymentData.total !== undefined && paymentBox) {
+    const gst = Math.round(paymentData.total * 0.18);
+    const grandTotal = paymentData.total + gst;
+
+    const setText = (id, value) => {
+        const element = document.getElementById(id);
+        const targetElement = element || (document.getElementById(id)?.parentNode);
+        if (targetElement) {
+            if (id === 'price' || id === 'total' || id === 'gst' || id === 'grandTotal') {
+                const valueSpan = document.getElementById(id);
+                if(valueSpan) valueSpan.innerText = value !== undefined && value !== null ? value : 'N/A';
+            } else {
+                 targetElement.innerText = value !== undefined && value !== null ? value : 'N/A';
+            }
+        } else {
+            console.warn(`Element or parent for ID "${id}" not found.`);
+        }
+    };
+
+    setText("seatType", paymentData.seatType);
+    setText("price", paymentData.price);
+    setText("qty", paymentData.qty);
+    setText("total", paymentData.total);
+    setText("gst", gst);
+    setText("grandTotal", grandTotal);
+
+  } else if (paymentBox) {
+     paymentBox.innerHTML = "<h2 style='text-align:center; color: #333;'>No valid booking data found. Please book again.</h2>";
+  } else {
+      const bodyContent = document.body.innerHTML;
+      document.body.innerHTML = bodyContent + "<h2 style='text-align:center; color: #333; padding: 20px;'>No valid booking data found and payment container missing.</h2>";
+  }
+
+  function goToPayment() {
+    const totalAmount = document.getElementById('grandTotal').innerText;
+    const price = parseFloat(totalAmount.replace(/[^0-9.-]+/g, ""));
+    
+    if (isNaN(price) || price <= 0) {
+      alert("Invalid price. Please try again.");
+      return;
+    }
+
+    const upiLink = `upi://pay?pa=pintukumarmeena992239.rzp@icici&pn=PINTUKUMARMEENA&tr=RZPQM4XUI48VrExPVqrv2&cu=INR&mc=7941&qrMedium=04&tn=PaymenttoPINTUKUMARMEENA&am=${price}`;
+    window.location.href = upiLink;
+  }
+</script>
+
+</body>
+</html>
