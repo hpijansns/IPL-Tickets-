@@ -31,21 +31,19 @@
     .image-item a {
         display: inline-block; /* Allows centering via text-align on parent */
         text-decoration: none; /* Remove underline */
-        /* Add max-width if you want to constrain the clickable area size */
-        /* max-width: 600px; */
+        /* max-width: 600px; */ /* Optional: Constrain clickable area */
     }
 
     /* Style for the image inside the link */
     .image-item img {
         display: block; /* Ensure image takes block space within link */
-        max-width: 100%; /* Make image responsive within its container (the link) */
+        max-width: 100%; /* Make image responsive */
         height: auto;   /* Maintain aspect ratio */
         border-radius: 10px; /* Rounded corners */
         box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
     }
 
-    /* Rest of your CSS */
-    /* Note: Removed duplicated CSS that was below */
+    /* Other CSS rules from original code */
     .grid { display: flex; flex-direction: column; gap: 20px; padding: 20px; max-width: 100%; }
     .card { border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .match-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 10px; flex-wrap: wrap; font-size: 14px; }
@@ -87,5 +85,65 @@
     </a>
   </div>
 
-  </body>
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/c53b117342f34e88/Picsart_25-04-25_07-01-09-637.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=EQPpJpfVhgeJJRYwdkQ-6GVAXSOh7OFidFkY4YE~3D0it0ZYfBaX5szL64bTE~6VwdHRQ39UVjcJCF4LR-MhsmNXDciZXtf0tSuLz3OIt1YHnEGPXsllHBSItbuBNQHgY9CdfMjwasgkEssy~Ul6VLWAJJlAn3CNT-~xcZtrT8n0nGUCROY0HR4MMZGhXytyh5IG9bfS6sX2zwNZjMG9Ljr-4i3h62X8A5i-EAn624PdW~ftxZFq-AQLtzpm~WHJdMbpLtJYfO-bGV-3U7UibzL4shjg29KoLwcnDO4iNtRTsnbOaNwU5vsepW2YN3UwVkElzmMnADEhZFfWWo7BMw__" alt="Clickable Image 4" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/5dc6c378feab4099/Picsart_25-04-25_07-01-13-750.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=S7FPWSjd2SJHKEf5jcR8sIV-dVPtwHbotUGDkFOGEVhreotq1LXVgPqIwmSVmxJlXemiJLQNZP6iYlGWDqRuFI2o5dD4rDCZyLXzgfr6gCyeQxoJp01okw4Y27N4UmuTxRRbL05bumWzhMbI8nQLdmijliFt5cWy7nBGN07KbA18M27ju1KOtaPUSP-xzh5X2-TrTC~lRu7VVXru-akYCz8RhPBe8sTcZ-3Wvrqj6esMGgcQ9lqs1GBB28HhFp8pFz3TPISvqnBD~vHvSGZNTesvPvONrqI-a3CeAbH~YiT54BqIacEbRTu~wmnkFbtkubSPS2cJS4QbD8LyHw4Fuw__" alt="Clickable Image 5" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/2111ea9668d24a5f/Picsart_25-04-25_07-01-18-282.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=EAliCXfUiFJWP2cKaUFF551loa14CwDw7lhtWilWAfcO9BVGUsBwfeHsa2S9OjwGnZuGRAmCtllzS9B8yRStd9GgS6mlxV~eGl9Z23n5BrEMRO26bgPqdvvxoIP4x5h1QIveKClltPXsJY4yxCncolXRCGn6PAiSVY~Jm8FsYAJLXtlJV4qKyAxwyXazMxGH1~-BwRzeWZ90ijitSZoWjJgSmWtnHB-W~icVqBo0GdPaAUtQmn15wS8zCzB4joT74huFNExdjWyjQpN0YsdzX7IpCALi1pqr9nL0fkgELsFNkniJ5VDkhZ71-JBffMt2DcrG5bkrT~lbYmSDBnZKJQ__" alt="Clickable Image 6" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/a7b5479e1bbb4d1c/Picsart_25-04-25_07-01-22-309.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=A9~8jWhBoYsnK3zQXG0Q0UCB~nHj1o~diWWutOxV6HuIlcwtCMs8oS-uAoGAj4RtbuI5HJqgbwRLoZYLrQggvRxxb7-UkFTQh4W-kfV95dkrSDwyB3bv2qZuj5O5PTNBRIID0-6Yt7Be~lHgAqxeY1tvm4sauFRbiiAhB~el2n7tHRhOII0cA-8CPiIen~n4jUmmd91-M8Wk26vmvh5ULwMcIo5dxGGt8KQQQBImrXJiwrY0mh-ZEzY-WQhdwbb0k5CjRHnLknMnW-IPLDObONbNhhdxhdrrFojCrfhhQUorbmxVR8eeEYR8NKyctYQGoehqNglReKYrX-8pivA7rQ__" alt="Clickable Image 7" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/bd0b85dc778f406c/Picsart_25-04-25_07-01-29-551.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dVku0ny7j~Yvhq4j8FjNxTQTdVCBnjxOkc1dDsBDO4cmpXeNzrg4e0CVBfehHCvOmgxHBrbhsBlOFPTyGLJdFEVA~GgJzxj8vGoVF86-d0FDYH5iSHTTeW6SoNFMWoLnc~iSaeJZdthyomRYWrOCLe2NcG0NvgC7Tz98EKlF~y6~GbgH~6GmvR6Sk369N1-z~6AOcWRY1gCyYa42PmuGV-wlkoLGc8BWcPsKLFSuQPcM51FNPKB9cAXfe~olStcu8kEFDDXSBO6Gc-Xvdn3gd3jt6UaF89-MLhPPHdZPa6TOOXL7aFxID0hWOLZdqxYauS6QzEwKBJOSmQDkyNzQhw__" alt="Clickable Image 8" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/2abae9c1040348ef/Picsart_25-04-25_07-01-33-666.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ZAqYmbtjRm~S14RH-uCSibHpGFVlXL65RrOQH15359Hlu2QGevFj4g-esKsdD36R84ZVsdrswWXN~sJqmIdoupYqxuurO6SMXbrDKnjEbj~vtL~N92FA01zCMuw2E-M3qpI-KR-yt5224TAUG7AjxxQvOB0aLOqW1kWNya71f2rrDFtxGdOkv~JH4FO5zoOsuHKpWg2zOHnkVGz9KYqJv3M8xy7xFk5Io66ZDUPVpSKkI1CvpD~TTEiw415dac0qaf02eeSvsC3IxECa0GQ1zGBrRxjlT2nYQl7xQ9NdgW719jant9Z0rlFDJaiPkmCy4bizRddLcN8tb29Qj9s3LQ__" alt="Clickable Image 9" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/76ef3fc6471a4a68/Picsart_25-04-25_07-01-39-453.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=DTwcCx5Abq5IWiJY-L9CAXhjJ0DpDO5EOXOagjRJWyC-SdDHGUpbiQdvyNbAW24NQwpvVyLYwn-UfZz8SxX3JtPgt7UgDJmVdAM9VUpBWK9D7JJmvl0GCNDTabVw1BBrmwdW1ejno-iWRuAeHcyTJbl-sO8Iepo7niNpLWsfsdJBH~adXtOj~ev1-ygROfZuK26xuLEQMnpAOABAkUpMYphLQf6nHquFum84~vzhJncvEoP2iebsCRTTpu0IUIEeve5Y7jwNaBgvCyGxNLXEVX7J3qly6YuuVKy7HR2MVF7kNcwxOvihmXTD8CtHFn2rtTKmb7t3buMsO2uTEH1a9w__" alt="Clickable Image 10" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/2fe8e7ca855649e1/Picsart_25-04-25_07-01-43-386.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Gtw0rYPepkILC9D92D96mYhvbSTPRvPPry3T~0ciQn6siunLHhgsDBiZ7UGstfGp~ajA123wE7F8IGrY4OzQDq52x603CES1HWkzSUQkWcQp9~jma1YGNRAI5uLTDS8FBbANgymt0dt9H9hmeWJH4QKIexLNIarSNjM3qxqBwAYXFtECLo32zF6~FnpqMb6f3a2s3yfxR3CKW4G6bWe9GtamOhP4sFUduJG6ORv1VKx55WQMd~qz6Z11~aLYxCkc0ySuRzPiD7nV9gHgMZFPV0dRynYWBJfqyv1Lv88kk-BcVDSQxw90SNi~y8m6Rr73t4Ashy54XfJlIVhZnawnAg__" alt="Clickable Image 11" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/1ad76b8567664d0c/Picsart_25-04-25_07-01-48-873.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=JlPyTkdmsnHldWqc-CFsjAWC4RdoTQdag7YBRHC0opksSjb-PXp6a5tdxWNgV6NRETLYD4xUGkGQsY1fIg5HZeuuek4rndhHgdfrf7vNIeMWCZfr1JFPzMag5SvlZdGiMoqe-rPBcMXvgsuXETEE68jYw5OuB8jPT1A8J-gUt1RwPTikNkFyucb6S-kx8UCM9GXWnkd3bHwWZzmYuuqq7kCQRfyInmAyh-rxUzj0QDz4IErlFMvx8xqHWE52XIyZqYCH-tgdup0K3nlLJ3SfpbQRcspeqnxAKlHrrhsExD7-Kl~WAF0r-hPkoktdbZRZqWe0RTN9QOsfSDH2UXRlFw__" alt="Clickable Image 12" />
+    </a>
+  </div>
+
+  <div class="image-item">
+    <a href="second.html">
+      <img src="https://media-hosting.imagekit.io/ca867995413644af/Picsart_25-04-25_07-01-53-645.jpg?Expires=1840152837&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=k3Gs-huxr4zleJsyH8N~L~57FvBfSS9sQ4UEXfsriN6A3FK7x0ccIg7xkGkUaHPCWGm-WKkdLuofTQl7pf1h1BAzz590EmGtGVO-HbXV1-DaNbcL~a0vriIxeiihVdjleZu7vnC0LZm71bwXr0O5sp09J-rex5XTenvnWAKYWeLxUizEFxXDAlhaJ1IxPhB2Zq26su1cyz84PavOr~AaQIW-XWTBPilT53tC6Exilqd~5i-cKy8O3YK8Zft~hlY2QMmnw~e2~hF9t2ARAuME2fS4T~pzidIhrIP-~j1f16-fb2dE2~Aqkq~1OTVMjg8zfsZnKJbRbvdMy6myQoyTrQ__" alt="Clickable Image 13" />
+    </a>
+  </div>
+
+</body>
 </html>
